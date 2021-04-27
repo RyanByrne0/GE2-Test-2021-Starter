@@ -12,8 +12,10 @@ public class BallScript : MonoBehaviour
     
     void Start()
     {
+        parent = GameObject.Find("BallSpawn");
         myRb = gameObject.GetComponent<Rigidbody>();
-        myRb.AddForce(transform.forward * force, ForceMode.Impulse);
+        myRb.AddForce(parent.transform.forward * force, ForceMode.Impulse);
+        
     }
 
      void OnTriggerEnter(Collider other)

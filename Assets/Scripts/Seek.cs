@@ -8,6 +8,9 @@ public class Seek : SteeringBehaviour
 {
     public GameObject targetGameObject = null;
     public GameObject player;
+    public GameObject ball;
+
+    public AudioSource Bark;
 
     public Vector3 target = Vector3.zero;
 
@@ -43,13 +46,14 @@ public class Seek : SteeringBehaviour
     public void LocateBall()
     {
         targetGameObject = GameObject.Find("ball(Clone)");
+        Bark.Play();
     }
 
     public void GoToPlayer()
     {
-        if(GameObject.Find("dogCol").GetComponent<DogControlller>().ballIsPickedUp == true)
+        if(GameObject.Find("dogCol").GetComponent<DogControlller>().ballIsPickedUp == true || targetGameObject == null)
         {
-            target = new Vector3(player.transform.position.x + 10, 0, player.transform.position.z + 10);
+            targetGameObject = player;
         }
-    }
+   }
 }
