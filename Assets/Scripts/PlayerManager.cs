@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
 
     public Transform ballSpawn;
 
-    private float throwForce = 20;
+    
     void Start()
     {
         
@@ -25,11 +25,12 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             Instantiate(ball, ballSpawn.position, Quaternion.identity);
+            ball.GetComponent<BallScript>().force = 0;
         }
 
         if (Input.GetKey(KeyCode.Space))
         {
-            ball.GetComponent<BallScript>().force += 5 * Time.deltaTime;
+            ball.GetComponent<BallScript>().force += 10 * Time.deltaTime;
         }
     }
 }
