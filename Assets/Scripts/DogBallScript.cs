@@ -7,6 +7,8 @@ public class DogBallScript : MonoBehaviour
     public Transform carryPos;
     public GameObject dog;
     public GameObject ball;
+
+    
     
     void Start()
     {
@@ -18,6 +20,8 @@ public class DogBallScript : MonoBehaviour
     void Update()
     {
         CheckDog();
+
+        
     }
 
     void CheckDog()
@@ -26,9 +30,10 @@ public class DogBallScript : MonoBehaviour
         {
             transform.position = carryPos.position;
         }
-        else { transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z); }
-        
-       
+        else { transform.position = this.transform.position; }
+
+
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -36,6 +41,7 @@ public class DogBallScript : MonoBehaviour
         if (other.CompareTag("DogTarget"))
         {
             dog.GetComponent<DogControlller>().ballIsPickedUp = false;
+           
 
            
         }

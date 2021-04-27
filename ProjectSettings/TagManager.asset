@@ -7,6 +7,7 @@ TagManager:
   - Ball
   - DogBall
   - Dog
+  - DogTarget
   layers:
   - Default
   - TransparentFX

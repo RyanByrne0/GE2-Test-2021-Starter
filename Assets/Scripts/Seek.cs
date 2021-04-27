@@ -12,6 +12,8 @@ public class Seek : SteeringBehaviour
 
     public AudioSource Bark;
 
+    public int audioPlay = 1;
+
     public Vector3 target = Vector3.zero;
 
     public void OnDrawGizmos()
@@ -46,7 +48,11 @@ public class Seek : SteeringBehaviour
     public void LocateBall()
     {
         targetGameObject = GameObject.Find("ball(Clone)");
-        Bark.Play();
+        if (targetGameObject == GameObject.Find("ball(Clone)"))
+        {
+           //Bark.Play();
+            
+        }
     }
 
     public void GoToPlayer()

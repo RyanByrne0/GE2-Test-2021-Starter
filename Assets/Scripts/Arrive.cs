@@ -10,7 +10,7 @@ public class Arrive : SteeringBehaviour
     public float slowingDistance = 15.0f;
 
     public GameObject targetGameObject = null;
-    public GameObject player;
+  
 
     public override Vector3 Calculate()
     {
@@ -24,14 +24,8 @@ public class Arrive : SteeringBehaviour
             targetPosition = targetGameObject.transform.position;
         }
 
-        FindPlayer();
+        
     }
 
-    public void FindPlayer()
-    {
-        if(GameObject.Find("dogCol").GetComponent<DogControlller>().ballIsPickedUp == false)
-        {
-            targetGameObject = player;
-        }
-    }
+   
 }
