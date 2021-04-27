@@ -7,6 +7,7 @@ using UnityEngine;
 public class Seek : SteeringBehaviour
 {
     public GameObject targetGameObject = null;
+    public GameObject player;
 
     public Vector3 target = Vector3.zero;
 
@@ -36,10 +37,19 @@ public class Seek : SteeringBehaviour
         }
 
         LocateBall();
+        GoToPlayer();
     }
 
     public void LocateBall()
     {
         targetGameObject = GameObject.Find("ball(Clone)");
+    }
+
+    public void GoToPlayer()
+    {
+        if(GameObject.Find("dogCol").GetComponent<DogControlller>().ballIsPickedUp == true)
+        {
+            target = new Vector3(player.transform.position.x + 10, 0, player.transform.position.z + 10);
+        }
     }
 }
