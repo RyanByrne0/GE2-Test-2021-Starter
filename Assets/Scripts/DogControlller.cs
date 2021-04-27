@@ -5,24 +5,23 @@ using UnityEngine;
 public class DogControlller : MonoBehaviour
 {
     public Transform ballAttach;
+    public GameObject ball;
+    public GameObject dogBall;
 
+    public bool ballIsPickedUp = false;
 
     void Start()
     {
-        
+       
     }
 
-    
     void Update()
     {
-        
+       
     }
 
-     void OnTriggerEnter(Collider other)
+    void CarryBall()
     {
-        if (other.CompareTag("Ball"))
-        {
-            other.transform.position = ballAttach.transform.position;
-        }
+        
     }
 }

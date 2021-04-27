@@ -40,6 +40,6 @@ public class Seek : SteeringBehaviour
 
     public void LocateBall()
     {
-        target = GameObject.Find("ball(Clone)").transform.position;
+        targetGameObject = GameObject.Find("ball(Clone)");
     }
 }
