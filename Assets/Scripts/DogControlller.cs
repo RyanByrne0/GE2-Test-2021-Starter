@@ -20,8 +20,5 @@ public class DogControlller : MonoBehaviour
        
     }
 
-    void CarryBall()
-    {
-        
-    }
+    
 }
